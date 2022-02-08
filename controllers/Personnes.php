@@ -4,7 +4,7 @@ class Personnes extends Controller{
         $this->loadModel('Personne');
         $personnes = $this->Personne->get_all();
         // echo '<pre>';
-        $this->render('index', compact($personnes));
+        $this->render('index',['personnes' => $personnes]);
         // print_r($personnes);
         // echo 'Personnes index method!!';
     }

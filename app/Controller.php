@@ -6,7 +6,8 @@ abstract class Controller{
         $this->$model = new $model();
     }
 
-    public function render(string $fichier){
+    public function render(string $fichier, array $data = []){
+        extract($data);
         require_once ROOT . '/views/' . strtolower(get_class($this)) . '/' . $fichier . '.php';
     }
 }
